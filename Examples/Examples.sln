@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.Monads.Logic", "Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.PrimitiveObsession.Logic", "Examples.PrimitiveObsession.Logic\Examples.PrimitiveObsession.Logic.csproj", "{D4DD2B91-5D00-4424-87DA-84393A8B27EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RailwayOrientedProgramming", "RailwayOrientedProgramming", "{5821F938-3E26-4FDE-9332-DD29175791D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples.RailwayOrientedProgramming.Logic", "Examples.RailwayOrientedProgramming.Logic\Examples.RailwayOrientedProgramming.Logic.csproj", "{06E4F994-161A-451B-83B2-C88E8B84BD16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,10 @@ Global
 		{D4DD2B91-5D00-4424-87DA-84393A8B27EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4DD2B91-5D00-4424-87DA-84393A8B27EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4DD2B91-5D00-4424-87DA-84393A8B27EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06E4F994-161A-451B-83B2-C88E8B84BD16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06E4F994-161A-451B-83B2-C88E8B84BD16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06E4F994-161A-451B-83B2-C88E8B84BD16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06E4F994-161A-451B-83B2-C88E8B84BD16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7B996F6F-D135-4480-A4C6-A639638E92B9} = {8B66ACF1-6460-4586-96BA-16EEFB9DDCDF}
@@ -55,5 +63,6 @@ Global
 		{FDBC0CC9-063A-47EA-9C67-0F711267679F} = {7B996F6F-D135-4480-A4C6-A639638E92B9}
 		{C676AC89-FC28-4992-B277-8D75EE26E782} = {3CB233F2-C41D-4DE1-82D0-A728FFDF4191}
 		{D4DD2B91-5D00-4424-87DA-84393A8B27EF} = {03F5C612-2D24-437F-9740-760109F476D8}
+		{06E4F994-161A-451B-83B2-C88E8B84BD16} = {5821F938-3E26-4FDE-9332-DD29175791D8}
 	EndGlobalSection
 EndGlobal
