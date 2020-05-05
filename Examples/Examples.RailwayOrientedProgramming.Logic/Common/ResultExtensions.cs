@@ -1,6 +1,6 @@
 using System;
 
-namespace Examples.RailwayOrientedProgramming.Logic
+namespace Examples.RailwayOrientedProgramming.Logic.Common
 {
     public static class ResultExtensions
     {
@@ -12,37 +12,39 @@ namespace Examples.RailwayOrientedProgramming.Logic
             return Result.Ok(maybe.Value);
         }
 
-        public static Result OnSuccess(this Result result, Action action)
+        public static Result<K> OnSuccess<T, K>(this Result<T> result, Func<T, K> func)
+        {
+            if (result.IsFailure)
+                return Result.Fail<K>(result.Error);
+
+            return Result.Ok(func(result.Value));
+        }
+
+        public static Result<T> Ensure<T>(this Result<T> result, Func<T, bool> predicate, string errorMessage)
         {
             if (result.IsFailure)
                 return result;
 
-            action();
-
-            return Result.Ok();
-        }
-
-        public static Result OnSuccess(this Result result, Func<Result> func)
-        {
-            if (result.IsFailure)
-                return result;
-            
-            return func();
-        }
-
-        public static Result OnFailure(this Result result, Action action)
-        {
-            if (result.IsFailure)
-            {
-                action();
-            }
+            if (!predicate(result.Value))
+                return Result.Fail<T>(errorMessage);
 
             return result;
         }
 
-        public static Result OnBoth(this Result result, Action<Result> action)
+        public static Result<K> Map<T, K>(this Result<T> result, Func<T, K> func)
         {
-            action(result);
+            if (result.IsFailure)
+                return Result.Fail<K>(result.Error);
+
+            return Result.Ok(func(result.Value));
+        }
+
+        public static Result<T> OnSuccess<T>(this Result<T> result, Action<T> action)
+        {
+            if (result.IsSuccess)
+            {
+                action(result.Value);
+            }
 
             return result;
         }
@@ -51,6 +53,15 @@ namespace Examples.RailwayOrientedProgramming.Logic
         {
             return func(result);
         }
+
+        public static Result OnSuccess(this Result result, Action action)
+        {
+            if (result.IsSuccess)
+            {
+                action();
+            }
+
+            return result;
+        }
     }
-    
 }

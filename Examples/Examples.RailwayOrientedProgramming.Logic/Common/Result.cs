@@ -1,6 +1,6 @@
 using System;
 
-namespace Examples.RailwayOrientedProgramming.Logic
+namespace Examples.RailwayOrientedProgramming.Logic.Common
 {
     public class Result
     {

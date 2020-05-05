@@ -1,4 +1,4 @@
-namespace Examples.RailwayOrientedProgramming.Logic
+namespace Examples.RailwayOrientedProgramming.Logic.Common
 {
     public abstract class ValueObject<T>
         where T : ValueObject<T>

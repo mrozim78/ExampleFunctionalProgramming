@@ -86,13 +86,22 @@ namespace Examples.RailwayOrientedProgramming.Logic
             return Value.ToString();
         }
 
-     
-        public T Unwrap( T defaultValue = default(T))
+      
+        public T Unwrap()
         {
             if (HasValue)
                 return Value;
 
-            return defaultValue;
+            return default(T);
+        }
+
+        
+        public K Unwrap<K>(Func<T, K> selector)
+        {
+            if (HasValue)
+                return selector(Value);
+
+            return default(K);
         }
     }
 }
