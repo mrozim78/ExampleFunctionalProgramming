@@ -105,5 +105,10 @@ namespace Examples.Monads.Logic
 
             return default(K);
         }
+
+        public Maybe<TResult> Bind<TResult>(Func<T, Maybe<TResult>> func) where TResult : class
+        {
+            return func(_value);
+        }
     }
 }
